@@ -13,7 +13,7 @@ class TestAddproduct(unittest.TestCase):
     def setUp(self):
         self.browser = webdriver.Chrome(ChromeDriverManager().install())
 
-    def test_01_success_login(self):
+    def test_add_product(self):
         # steps
         # buka web browser
         browser = self.browser
