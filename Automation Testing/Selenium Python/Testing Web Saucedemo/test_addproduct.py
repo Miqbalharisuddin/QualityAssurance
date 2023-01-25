@@ -38,7 +38,7 @@ class TestAddproduct(unittest.TestCase):
         browser.find_element(
             By.ID, "add-to-cart-sauce-labs-bike-light").click()
         time.sleep(1)
-        # klik add product
+        # klik menu cart
         browser.find_element(By.ID, "shopping_cart_container").click()
         time.sleep(2)
         # validasi
