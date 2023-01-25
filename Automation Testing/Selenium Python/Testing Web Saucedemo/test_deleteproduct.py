@@ -34,15 +34,22 @@ class TestAddproduct(unittest.TestCase):
         # klik add product
         browser.find_element(By.ID, "add-to-cart-sauce-labs-backpack").click()
         time.sleep(1)
-        # klik add product
         browser.find_element(
             By.ID, "add-to-cart-sauce-labs-bike-light").click()
         time.sleep(1)
         # klik menu cart
         browser.find_element(By.ID, "shopping_cart_container").click()
         time.sleep(2)
+        # klik delete product
+        browser.find_element(By.ID, "remove-sauce-labs-backpack").click()
+        time.sleep(1)
+        browser.find_element(By.ID, "remove-sauce-labs-bike-light").click()
+        time.sleep(1)
+        # klik back shopping
+        browser.find_element(By.ID, "continue-shopping").click()
+        time.sleep(1)
         # validasi
-        expectedURL = "https://www.saucedemo.com/cart.html"
+        expectedURL = "https://www.saucedemo.com/inventory.html"
         actualURL = browser.current_url
         self.assertEquals(expectedURL, actualURL)
 
