@@ -44,6 +44,10 @@ class TestLogin(unittest.TestCase):
         # klik menu logout
         browser.find_element(By.XPATH, "/html/body/nav/ul/li[5]/a").click()
         time.sleep(1)
+        # validasi
+        expectedURL = "https://katalon-demo-cura.herokuapp.com/"
+        actualURL = browser.current_url
+        self.assertEquals(expectedURL, actualURL)
 
     def tearDown(self):
         self.browser.close()
