@@ -13,7 +13,7 @@ class TestMenuAdmin(unittest.TestCase):
     def setUp(self):
         self.browser = webdriver.Chrome(ChromeDriverManager().install())
 
-    def test_01_succces_login(self):
+    def test_menuAdmin(self):
         browser = self.browser
         browser.get("https://opensource-demo.orangehrmlive.com/")  # buka situs
         browser.maximize_window()
