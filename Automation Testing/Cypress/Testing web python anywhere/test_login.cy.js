@@ -1,17 +1,19 @@
 describe('Login', () => {
     it('Successfull Login', () => {
-        cy.visit('https://the-internet.herokuapp.com/login')
-        cy.get('#username').type('tomsmith')
-        cy.get('#password').type('SuperSecretPassword!')
-        cy.get('.fa').click()
-        cy.url().should('include', 'https://the-internet.herokuapp.com/secure')
+        cy.visit('http://barru.pythonanywhere.com/daftar')
+        cy.get('#email').type('jagoku@gmail.com')
+        cy.get('#password').type('jago123')
+        cy.get('#signin_login').click()
+        cy.get('#swal2-content')
+        cy.get('.swal2-confirm').click()
 
     })
-    it('Failed Login Invalid Username', () => {
-        cy.visit('https://the-internet.herokuapp.com/login')
-        cy.get('#username').type('YantoBasna')
-        cy.get('#password').type('SuperSecretPassword!')
-        cy.get('.fa').click()
-
+    it('Failed Login blank field', () => {
+        cy.visit('http://barru.pythonanywhere.com/daftar')
+        cy.get('#email').type(' ')
+        cy.get('#password').type(' ')
+        cy.get('#signin_login').click()
+        cy.get('#swal2-content')
+        cy.get('.swal2-confirm').click()
     })
 })
