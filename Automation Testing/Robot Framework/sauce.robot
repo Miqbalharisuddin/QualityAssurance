@@ -4,24 +4,36 @@ Library     OperatingSystem
 
 
 *** Variables ***
-${Browser}      Chrome
-${Url}          https://www.saucedemo.com/
-${name}         standard_user
-${pass}         secret_sauce
+${Browser}          Chrome
+${Url}              https://www.saucedemo.com/
+${name}             standard_user
+${wrong_name}       yanto
+${pass}             secret_sauce
+${wrong_pass}       yanto123
 
 
 *** Test Cases ***
-Login saucedemo
+Success Login saucedemo
     open page
-    Login
+    Success Login
+
+Failed Login saucedemo
+    open page
+    Failed Login
 
 
 *** Keywords ***
 open page
     Open Browser    ${Url}    Chrome
 
-Login
-    Input Text    xpath=/html/body/div/div/div[2]/div[1]/div[1]/div/form/div[1]/input    ${name}
-    Input Text    xpath=/html/body/div/div/div[2]/div[1]/div[1]/div/form/div[2]/input    ${pass}
-    Click Element    xpath=/html/body/div/div/div[2]/div[1]/div[1]/div/form/input
+Success Login
+    Input Text    id=user-name    ${name}
+    Input Text    id=password    ${pass}
+    Click Element    id=login-button
+    Close Browser
+
+Failed Login
+    Input Text    id=user-name    ${wrong_name}
+    Input Text    id=password    ${wrong_pass}
+    Click Element    id=login-button
     Close Browser
