@@ -6,7 +6,6 @@ Library     OperatingSystem
 *** Variables ***
 ${Browser}          Chrome
 ${Url}              https://www.saucedemo.com/
-${UrlDashboard}     https://www.saucedemo.com/inventory.html
 ${name}             standard_user
 ${invalid_name}     yanto
 ${pass}             secret_sauce
