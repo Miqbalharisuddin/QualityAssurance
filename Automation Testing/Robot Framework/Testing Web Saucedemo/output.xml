@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.1 on win32)" generated="20230130 08:08:30.550" rpa="false" schemaversion="3">
+<suite id="s1" name="Test Login" source="C:\Users\hp\Downloads\QualityAssurance\Automation Testing\Robot Framework\Testing Web Saucedemo\test_login.robot">
+<test id="s1-t1" name="Success Login" line="18">
+<kw name="open page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${Url}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230130 08:08:32.532" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20230130 08:08:32.531" endtime="20230130 08:08:47.357"/>
+</kw>
+<status status="PASS" starttime="20230130 08:08:32.530" endtime="20230130 08:08:47.357"/>
+</kw>
+<kw name="Success Login">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=user-name</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230130 08:08:47.364" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<status status="PASS" starttime="20230130 08:08:47.362" endtime="20230130 08:08:47.718"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=password</arg>
+<arg>${pass}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230130 08:08:47.719" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
+<status status="PASS" starttime="20230130 08:08:47.718" endtime="20230130 08:08:47.962"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=login-button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230130 08:08:47.963" level="INFO">Clicking element 'id=login-button'.</msg>
+<status status="PASS" starttime="20230130 08:08:47.963" endtime="20230130 08:08:48.190"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Swag Labs</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230130 08:08:48.233" level="INFO">Page title is 'Swag Labs'.</msg>
+<status status="PASS" starttime="20230130 08:08:48.191" endtime="20230130 08:08:48.233"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230130 08:08:48.234" endtime="20230130 08:08:50.912"/>
+</kw>
+<status status="PASS" starttime="20230130 08:08:47.359" endtime="20230130 08:08:50.913"/>
+</kw>
+<status status="PASS" starttime="20230130 08:08:32.528" endtime="20230130 08:08:50.917"/>
+</test>
+<test id="s1-t2" name="Failed Login invalid username" line="22">
+<kw name="open page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${Url}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230130 08:08:50.946" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20230130 08:08:50.945" endtime="20230130 08:09:01.164"/>
+</kw>
+<status status="PASS" starttime="20230130 08:08:50.944" endtime="20230130 08:09:01.165"/>
+</kw>
+<kw name="Failed Login invalid username">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=user-name</arg>
+<arg>${invalid_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230130 08:09:01.167" level="INFO">Typing text 'yanto' into text field 'id=user-name'.</msg>
+<status status="PASS" starttime="20230130 08:09:01.166" endtime="20230130 08:09:01.399"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=password</arg>
+<arg>${pass}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230130 08:09:01.401" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
+<status status="PASS" starttime="20230130 08:09:01.400" endtime="20230130 08:09:01.620"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=login-button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230130 08:09:01.621" level="INFO">Clicking element 'id=login-button'.</msg>
+<status status="PASS" starttime="20230130 08:09:01.620" endtime="20230130 08:09:01.739"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${error}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20230130 08:09:01.788" level="INFO">Current page contains text 'Epic sadface: Username and password do not match any user in this service'.</msg>
+<status status="PASS" starttime="20230130 08:09:01.739" endtime="20230130 08:09:01.788"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230130 08:09:01.789" endtime="20230130 08:09:04.440"/>
+</kw>
+<status status="PASS" starttime="20230130 08:09:01.165" endtime="20230130 08:09:04.441"/>
+</kw>
+<status status="PASS" starttime="20230130 08:08:50.943" endtime="20230130 08:09:04.448"/>
+</test>
+<test id="s1-t3" name="Failed Login invalid password" line="26">
+<kw name="open page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${Url}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230130 08:09:04.504" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20230130 08:09:04.503" endtime="20230130 08:09:11.851"/>
+</kw>
+<status status="PASS" starttime="20230130 08:09:04.503" endtime="20230130 08:09:11.852"/>
+</kw>
+<kw name="Failed Login invalid password">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=user-name</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230130 08:09:11.855" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<status status="PASS" starttime="20230130 08:09:11.853" endtime="20230130 08:09:12.147"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=password</arg>
+<arg>${invalid_pass}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230130 08:09:12.148" level="INFO">Typing text 'yanto123' into text field 'id=password'.</msg>
+<status status="PASS" starttime="20230130 08:09:12.147" endtime="20230130 08:09:12.335"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=login-button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230130 08:09:12.336" level="INFO">Clicking element 'id=login-button'.</msg>
+<status status="PASS" starttime="20230130 08:09:12.336" endtime="20230130 08:09:12.436"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${error}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20230130 08:09:12.505" level="INFO">Current page contains text 'Epic sadface: Username and password do not match any user in this service'.</msg>
+<status status="PASS" starttime="20230130 08:09:12.437" endtime="20230130 08:09:12.505"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230130 08:09:12.506" endtime="20230130 08:09:15.133"/>
+</kw>
+<status status="PASS" starttime="20230130 08:09:11.852" endtime="20230130 08:09:15.134"/>
+</kw>
+<status status="PASS" starttime="20230130 08:09:04.502" endtime="20230130 08:09:15.135"/>
+</test>
+<test id="s1-t4" name="Failed Login invalid username and password" line="30">
+<kw name="open page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${Url}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230130 08:09:15.145" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20230130 08:09:15.143" endtime="20230130 08:09:24.406"/>
+</kw>
+<status status="PASS" starttime="20230130 08:09:15.142" endtime="20230130 08:09:24.406"/>
+</kw>
+<kw name="Failed Login invalid username and password">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=user-name</arg>
+<arg>${invalid_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230130 08:09:24.408" level="INFO">Typing text 'yanto' into text field 'id=user-name'.</msg>
+<status status="PASS" starttime="20230130 08:09:24.407" endtime="20230130 08:09:24.646"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=password</arg>
+<arg>${invalid_pass}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230130 08:09:24.647" level="INFO">Typing text 'yanto123' into text field 'id=password'.</msg>
+<status status="PASS" starttime="20230130 08:09:24.646" endtime="20230130 08:09:24.836"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=login-button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230130 08:09:24.837" level="INFO">Clicking element 'id=login-button'.</msg>
+<status status="PASS" starttime="20230130 08:09:24.836" endtime="20230130 08:09:24.991"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${error}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20230130 08:09:25.036" level="INFO">Current page contains text 'Epic sadface: Username and password do not match any user in this service'.</msg>
+<status status="PASS" starttime="20230130 08:09:24.991" endtime="20230130 08:09:25.036"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230130 08:09:25.036" endtime="20230130 08:09:27.936"/>
+</kw>
+<status status="PASS" starttime="20230130 08:09:24.407" endtime="20230130 08:09:27.936"/>
+</kw>
+<status status="PASS" starttime="20230130 08:09:15.140" endtime="20230130 08:09:27.942"/>
+</test>
+<status status="PASS" starttime="20230130 08:08:30.555" endtime="20230130 08:09:27.962"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="Test Login">Test Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
