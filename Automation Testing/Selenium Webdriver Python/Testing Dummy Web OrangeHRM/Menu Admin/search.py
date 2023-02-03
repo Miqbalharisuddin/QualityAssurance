@@ -34,6 +34,28 @@ class TestMenuAdmin(unittest.TestCase):
         browser.find_element(
             By.XPATH, "/html/body/div/div[1]/div[1]/aside/nav/div[2]/ul/li[1]/a").click()
         time.sleep(8)
+        # input username
+        browser.find_element(
+            By.XPATH, "/html/body/div/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[1]/div/div[2]/input").send_keys("Admin")
+        time.sleep(1)
+        # dropdown user role
+        dropMenu = browser.find_element(
+            By.XPATH, "/html/body/div/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[2]/div/div[2]/div/div")
+        dropMenu.click()
+        dropMenu.send_keys("Admin")
+        # input employee name
+        browser.find_element(
+            By.XPATH, "/html/body/div/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[3]/div/div[2]/div/div/input").send_keys("Aaliyah Haq")
+        time.sleep(1)
+        # dropdown status
+        dropMenu = browser.find_element(
+            By.XPATH, "/html/body/div/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[4]/div/div[2]/div/div")
+        dropMenu.click()
+        dropMenu.send_keys("Enable")
+        # click button search
+        browser.find_element(
+            By.XPATH, "/html/body/div/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[2]/button[2]").click()
+        time.sleep(8)
         # validasi
         expectedURL = "https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers"
         actualURL = browser.current_url
