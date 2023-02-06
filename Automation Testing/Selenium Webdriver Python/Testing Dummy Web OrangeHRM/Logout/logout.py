@@ -3,6 +3,7 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
@@ -31,12 +32,14 @@ class TestLogin(unittest.TestCase):
             By.XPATH, "/html/body/div/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button").click()
         time.sleep(8)
         # klik dropdown
-        dropMenu = browser.find_element(
-            By.XPATH, "/html/body/div/div[1]/div[1]/header/div[1]/div[2]/ul/li/span")
-        dropMenu.click()
-        dropMenu.browser.find_element(
-            By.XPATH, "/html/body/div/div[1]/div[1]/header/div[1]/div[2]/ul/li/ul/li[4]/a")
-        dropMenu.click()
+        drp = browser.find_element(
+            By.XPATH, "/html/body/div/div[1]/div[1]/header/div[1]/div[2]/ul/li/span").click()
+        drp.select_by_visible_text("Logout")
+        # dropMenu = browser.find_element(
+        #     By.XPATH, "/html/body/div/div[1]/div[1]/header/div[1]/div[2]/ul/li/span")
+        # dropMenu.click()
+        # dropMenu.send_keys("Logout", Keys.oxd-userdropdown-link)
+        # dropMenu.click()
         time.sleep(2)
         # validasi
         expectedURL = "https://opensource-demo.orangehrmlive.com/"
